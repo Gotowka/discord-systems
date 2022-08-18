@@ -1,0 +1,5 @@
+module.exports.levelRank = require('./systems/rank-level.js')
+module.exports.Tvpis = require('./systems/tvpis.js')
+module.exports.joinCard = require('./systems/card-join.js')
+module.exports.leaveCard = require('./systems/card-leave.js')
+module.exports.Triggered = require('./systems/triggered.js')

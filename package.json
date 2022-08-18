@@ -1,0 +1,32 @@
+{
+  "name": "discord-systems",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gotowka/discord-systems.git"
+  },
+  "keywords": [
+    "discord",
+    "systems",
+    "discord4fun",
+    "discord-4fun",
+    "leveling",
+    "discordcanvas",
+    "discord-canvas"
+  ],
+  "author": "Gotowka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gotowka/discord-systems/issues"
+  },
+  "homepage": "https://github.com/Gotowka/discord-systems#readme",
+  "dependencies": {
+    "discord.js": "^13.1.0",
+    "canvas": "^2.9.3"
+  }
+}
