@@ -5,11 +5,14 @@ Canvas.registerFont('./node_modules/discord-systems/font/Uni_Sans_Heavy.otf', { 
 
 module.exports = class Tvpis {
     constructor(options = {}) {
+        if (!options.message) options.message = {}
+		if (!options.message.msg) throw new Error('NO_MESSAGE')
+		if (typeof options.message.msg !== 'object') throw new Error('INVALID_MESSAGE')
         this.message = options.message
         this.text = options.text
     }
     sendMessage(content) {
-        return this.message.channel.send(content)
+        return this.message.msg.channel.send(content)
     }
     async send() {
         let tekst = this.text
@@ -39,7 +42,7 @@ module.exports = class Tvpis {
         let attachment
         if (Discord.version.includes('13')) attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), 'tvpis.png')
         if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: 'tvpis.png'})
-        this.message.channel.send({ files: [attachment] })
+        this.message.msg.channel.send({ files: [attachment], tts: this.message.tts })
     }
     async reply() {
         let tekst = this.text
@@ -69,6 +72,6 @@ module.exports = class Tvpis {
         let attachment
         if (Discord.version.includes('13')) attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), 'tvpis.png')
         if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: 'tvpis.png'})
-        this.message.reply({ files: [attachment] })
+        this.message.msg.reply({ files: [attachment], allowedMentions: { repliedUser: this.message.mention }, tts: this.message.tts })
     }
 }
