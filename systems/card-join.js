@@ -19,7 +19,9 @@ module.exports = class joinCard {
     this.client = options.client
     this.captcha = options.captcha
     this.channel = options.channel
-    this.member = options.member
+    this.member = options.member.user
+    this.member2 = options.member
+    this.role = options.role
     this.bottom = options.bottom
 	this.avatar = this.member.displayAvatarURL().replace('.webp', '.png')
 	this.middle = options.middle.toUpperCase()
@@ -169,30 +171,34 @@ module.exports = class joinCard {
                                             return channel.send({ content: this.error2 });
                                         } else if (check2 === true) {
                                             channel.send({ content: this.success})
+                                            if (this.role) this.member2.roles.add(this.role)
                                             canvas1()
                                         }
                                     })
                                 } else if (check === true) {
                                     m.channel.send({ content: this.success})
+                                    if (this.role) this.member2.roles.add(this.role)
                                     canvas1()
                                 }
                             })
                         } else if (version.includes('13')) {
-                            channel.awaitMessages({ filter, max: 1, time: 10000 }).then(collected => {
+                            channel.awaitMessages({ filter, max: 1, time: 30000 }).then(collected => {
                                 const check = collected.at(0).content === random
                                 if (check === false) {
                                     channel.send({ content: this.error1 })
-                                    channel.awaitMessages({ filter: filter, max: 1, time: 10_000 }).then(async collected1 => {
+                                    channel.awaitMessages({ filter: filter, max: 1, time: 30_000 }).then(async collected1 => {
                                         const check2 = collected1.at(0).content === random
                                         if (check2 === false) {
                                             return m.channel.send({ content: this.error2 });
                                         } else if (check2 === true) {
                                             channel.send({ content: this.success})
+                                            if (this.role) this.member2.roles.add(this.role)
                                             canvas1()
                                         }
                                     })
                                 } else if (check === true) {
                                     channel.send({ content: this.success })
+                                    if (this.role) this.member2.roles.add(this.role)
                                     canvas1()
                                 }
                             })

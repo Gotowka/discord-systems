@@ -10,6 +10,8 @@ npm install discord-systems
 
 - [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixed]`
 
+- [1.0.2](https://www.npmjs.com/package/discord-systems/v/1.0.2), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Update]`
+
 **📁 Required packages**
 
 - [Discord.js](https://www.npmjs.com/package/discord.js) npm install discord.js
@@ -58,6 +60,7 @@ client.on('messageCreate', async (message) => {
                 //mention: '', // BOOLEAN, Only for .reply()
             },
 		    //background: '', // https://i.imgur.com/IMGURL 
+            //member: message.member, // MEMBER OBJECT
             exp: '', // NUMBER
             maxexp: '', // NUMBER
             level: '', // NUMBER
@@ -77,11 +80,12 @@ client.on('guildMemberAdd', async (member) => {
     const channel = member.guild.channels.cache.get('CHANNEL-ID')
     new joinCard({
         channel: channel, // CHANNEl OBJECT
-        member: member.user, // USER OBJECT
+        member: member, // MEMBER OBJECT
         middle: ``, // STRING
         name: ``, // STRING
         bottom: ``, // STRING
         // captcha: true, // BOOLEAN
+        // role: '' // ROLE ID, ONLY FOR CAPTCHA = TRUE
         // client: client, // CLIENT OBJECT, REQUIRED FOR CAPTCHA
         // language: '', <pl/eng>, FOR CAPTCHA
     }).send()
