@@ -8,9 +8,11 @@ npm install discord-systems
 
 - [1.0.0](https://www.npmjs.com/package/discord-systems/v/1.0.0), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3
 
-- [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixed]`
+- [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixes]`
 
 - [1.0.2](https://www.npmjs.com/package/discord-systems/v/1.0.2), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Update]`
+
+- [1.0.3](https://www.npmjs.com/package/discord-systems/v/1.0.3), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixes]`
 
 **📁 Required packages**
 

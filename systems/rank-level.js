@@ -71,7 +71,7 @@ module.exports = class levelRank {
 	const ctx = canvas.getContext('2d')
 
 	if (this.image) {
-		if (!this.image.includes('https://i.imgur.com/')) {
+		if (this.image.includes('https://i.imgur.com/')) {
 			const bc = await Canvas.loadImage(background)
 			ctx.drawImage(bc, 0, 0, canvas.width, canvas.height)
 		} else {
@@ -191,7 +191,7 @@ const canvas = Canvas.createCanvas(934, 282)
 const ctx = canvas.getContext('2d')
 
 if (this.image) {
-	if (!this.image.includes('https://i.imgur.com/')) {
+	if (this.image.includes('https://i.imgur.com/')) {
 		const bc = await Canvas.loadImage(background)
 		ctx.drawImage(bc, 0, 0, canvas.width, canvas.height)
 	} else {
