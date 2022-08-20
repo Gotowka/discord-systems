@@ -60,7 +60,7 @@ client.on('messageCreate', async (message) => {
                 //mention: '', // BOOLEAN, Only for .reply()
             },
 		    //background: '', // https://i.imgur.com/IMGURL 
-            //member: message.member, // MEMBER OBJECT
+            //member: message.user, // USER OBJECT
             exp: '', // NUMBER
             maxexp: '', // NUMBER
             level: '', // NUMBER
