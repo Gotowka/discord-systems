@@ -10,9 +10,11 @@ npm install discord-systems
 
 - [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixes]`
 
-- [1.0.2](https://www.npmjs.com/package/discord-systems/v/1.0.2), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Update]`
+- [1.0.2](https://github.com/Gotowka/discord-systems/releases/tag/1.0.2), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Update]`
 
-- [1.0.3](https://www.npmjs.com/package/discord-systems/v/1.0.3), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixes]`
+- [1.0.3](https://github.com/Gotowka/discord-systems/releases/tag/1.0.3), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixes]`
+
+- [1.0.4](https://github.com/Gotowka/discord-systems/releases/tag/1.0.4), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Update]`
 
 **📁 Required packages**
 
@@ -61,7 +63,7 @@ client.on('messageCreate', async (message) => {
                 //tts: '', // BOOLEAN
                 //mention: '', // BOOLEAN, Only for .reply()
             },
-		    //background: '', // https://i.imgur.com/IMGURL 
+		    //background: '', // https://i.imgur.com/IMGCODE
             //member: message.user, // USER OBJECT
             exp: '', // NUMBER
             maxexp: '', // NUMBER
@@ -90,6 +92,10 @@ client.on('guildMemberAdd', async (member) => {
         // role: '' // ROLE ID, ONLY FOR CAPTCHA = TRUE
         // client: client, // CLIENT OBJECT, REQUIRED FOR CAPTCHA
         // language: '', <pl/eng>, FOR CAPTCHA
+        // text: '', // HEX
+        // avatarborder: '', // HEX
+        // avatarbg: '', // HEX
+        // background: '' // https://i.imgur.com/IMGCODE
     }).send()
 })
 
@@ -102,6 +108,10 @@ client.on('guildMemberRemove', async (member) => {
         middle: ``, // STRING
         name: ``, // STRING
         bottom: ``, // STRING
+        // text: '', // HEX
+        // avatarborder: '', // HEX
+        // avatarbg: '', // HEX
+        // background: '' // https://i.imgur.com/IMGCODE
     }).send()
 })
 ```

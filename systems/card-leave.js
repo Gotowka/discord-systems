@@ -19,10 +19,10 @@ module.exports = class leaveCard {
 	this.avatar = this.member.displayAvatarURL().replace('.webp', '.png')
 	this.middle = options.middle.toUpperCase()
 	this.name = options.name.toUpperCase()
-	this.text = '#FFFFFF'
-	this.avatarborder = '#FFFFFF'
-	this.avatarbg = '#FFFFFF'
-	this.background = 'https://i.imgur.com/pcFnuDK.jpg'
+	this.text = options.text ?? '#FFFFFF'
+	this.avatarborder = options.avatarborder ?? '#FFFFFF'
+	this.avatarbg = options.avatarbg ?? '#FFFFFF'
+	this.background = options.background ?? 'https://i.imgur.com/pcFnuDK.jpg'
     }
 
     sendMessage(content) {
