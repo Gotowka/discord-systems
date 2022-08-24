@@ -16,6 +16,8 @@ npm install discord-systems
 
 - [1.0.4](https://github.com/Gotowka/discord-systems/releases/tag/1.0.4), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Update]`
 
+- [1.0.5](https://github.com/Gotowka/discord-systems/releases/tag/1.0.5), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Beta]`
+
 **📁 Required packages**
 
 - [Discord.js](https://www.npmjs.com/package/discord.js) npm install discord.js
@@ -31,7 +33,7 @@ npm install discord-systems
 
 ```js
 client.on('messageCreate', async (message) => {
-    const { levelRank, Tvpis, Triggered } = require('discord-systems')
+    const { levelRank, Tvpis, Triggered, Suggest } = require('discord-systems')
 
     if (message.content == 'triggered') {
         new Triggered({
@@ -77,6 +79,16 @@ client.on('messageCreate', async (message) => {
             //border: '', // HEX
 	    }).<send/reply>()
     }
+    
+    if (message.channel.id == '') {
+    new Suggest({
+      suggest: message.content, // STRING
+      guild: message.guild, // GUILD OBJECT
+      member: message.member, // MEMBER OBJECT
+      message: message, // MESSAGE/INTERACTION OBJECT
+      client: client // CLIENT OBJECT
+    }).start()
+    }
 })
 
 client.on('guildMemberAdd', async (member) => {
@@ -113,5 +125,25 @@ client.on('guildMemberRemove', async (member) => {
         // avatarbg: '', // HEX
         // background: '' // https://i.imgur.com/IMGCODE
     }).send()
+})
+
+client.on('interactionCreate', async (interaction) => {
+  if (interaction.customId == 'dcsys-yes') {
+    const { SuggestsYes } = require('discord-systems')
+    new SuggestsYes({
+      member: interaction.member, // MEMBER OBJECT
+      channel: interaction.channel.id, // CHANEL ID
+      guild: interaction.guild, // GUILD OBJECT
+      message: interaction.message.id, // MESSAGE ID
+    }).start()
+  } else if (interaction.customId == 'dcsys-no') {
+    const { SuggestsNo } = require('discord-systems')
+    new SuggestsNo({
+      member: interaction.member, // MEMBER OBJECT
+      channel: interaction.channel.id, // CHANEL ID
+      guild: interaction.guild, // GUILD OBJECT
+      message: interaction.message.id, // MESSAGE ID
+    }).start()
+  }
 })
 ```
