@@ -8,15 +8,17 @@ npm install discord-systems
 
 - [1.0.0](https://www.npmjs.com/package/discord-systems/v/1.0.0), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3
 
-- [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixes]`
+- [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), `[Fixes]`
 
-- [1.0.2](https://github.com/Gotowka/discord-systems/releases/tag/1.0.2), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Update]`
+- [1.0.2](https://github.com/Gotowka/discord-systems/releases/tag/1.0.2), `[Update]`
 
-- [1.0.3](https://github.com/Gotowka/discord-systems/releases/tag/1.0.3), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Fixes]`
+- [1.0.3](https://github.com/Gotowka/discord-systems/releases/tag/1.0.3), `[Fixes]`
 
-- [1.0.4](https://github.com/Gotowka/discord-systems/releases/tag/1.0.4), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Update]`
+- [1.0.4](https://github.com/Gotowka/discord-systems/releases/tag/1.0.4), `[Update]`
 
-- [1.0.5](https://github.com/Gotowka/discord-systems/releases/tag/1.0.5), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3 `[Beta]`
+- [1.0.5](https://github.com/Gotowka/discord-systems/releases/tag/1.0.5), `[Beta]`
+
+- [1.0.6](https://github.com/Gotowka/discord-systems/releases/tag/1.0.6), `[Update]`
 
 **📁 Required packages**
 
@@ -131,18 +133,14 @@ client.on('interactionCreate', async (interaction) => {
   if (interaction.customId == 'dcsys-yes') {
     const { SuggestsYes } = require('discord-systems')
     new SuggestsYes({
-      member: interaction.member, // MEMBER OBJECT
-      channel: interaction.channel.id, // CHANEL ID
-      guild: interaction.guild, // GUILD OBJECT
-      message: interaction.message.id, // MESSAGE ID
+        interaction: interaction, // INTERACTION OBJECT
+        language: '' // PL/ENG
     }).start()
   } else if (interaction.customId == 'dcsys-no') {
     const { SuggestsNo } = require('discord-systems')
     new SuggestsNo({
-      member: interaction.member, // MEMBER OBJECT
-      channel: interaction.channel.id, // CHANEL ID
-      guild: interaction.guild, // GUILD OBJECT
-      message: interaction.message.id, // MESSAGE ID
+        interaction: interaction, // INTERACTION OBJECT
+        language: '' // PL/ENG
     }).start()
   }
 })
