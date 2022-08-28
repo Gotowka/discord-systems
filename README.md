@@ -10,15 +10,17 @@ npm install discord-systems
 
 - [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), `[Fixes]`
 
-- [1.0.2](https://github.com/Gotowka/discord-systems/releases/tag/1.0.2), `[Update]`
+- [1.0.2](https://github.com/Gotowka/discord-systems/releases/tag/1.0.2), `[Update]` (+2, /1, -0)
 
-- [1.0.3](https://github.com/Gotowka/discord-systems/releases/tag/1.0.3), `[Fixes]`
+- [1.0.3](https://github.com/Gotowka/discord-systems/releases/tag/1.0.3), `[Fixes]`  (+0, /1, -0)
 
-- [1.0.4](https://github.com/Gotowka/discord-systems/releases/tag/1.0.4), `[Update]`
+- [1.0.4](https://github.com/Gotowka/discord-systems/releases/tag/1.0.4), `[Update]` (+8, /0, -0)
 
-- [1.0.5](https://github.com/Gotowka/discord-systems/releases/tag/1.0.5), `[Beta]`
+- [1.0.5](https://github.com/Gotowka/discord-systems/releases/tag/1.0.5), `[Beta]` (+3, /0, -0)
 
-- [1.0.6](https://github.com/Gotowka/discord-systems/releases/tag/1.0.6), `[Update]`
+- [1.0.6](https://github.com/Gotowka/discord-systems/releases/tag/1.0.6), `[Update]` (+0, /2, -0)
+
+- [1.0.7](https://github.com/Gotowka/discord-systems/releases/tag/1.0.7), `[Update]` (+1, /0, -1)
 
 **📁 Required packages**
 
@@ -72,13 +74,13 @@ client.on('messageCreate', async (message) => {
             exp: '', // NUMBER
             maxexp: '', // NUMBER
             level: '', // NUMBER
-            rank: '', // NUMBER
             //text: '', // HEX
             //avatarborder: '', // HEX
             //avatarbackground: '', // HEX
             //bar: '', // HEX
             //barbackground: '', // HEX
             //border: '', // HEX
+            //blur: '', // NUMBER
 	    }).<send/reply>()
     }
     

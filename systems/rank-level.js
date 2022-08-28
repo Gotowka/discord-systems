@@ -2,14 +2,13 @@ const Canvas = require('canvas')
 const Discord = require("discord.js");
 const SI_SYMBOL = ["", "k", "M", "B", "T", "P", "E"]
 
-Canvas.registerFont('./node_modules/discord-systems/font/Uni_Sans_Heavy.otf', { family: 'Uni-Sans-Heavy' })
+//Canvas.registerFont('./node_modules/discord-systems/font/Uni_Sans_Heavy.otf', { family: 'Uni-Sans-Heavy' })
 
 module.exports = class levelRank {
     constructor(options = {}) {
 		if (!options.exp) throw new Error('Option EXP is required!')
 		if (!options.maxexp) throw new Error('Option MAXEXP is required!')
-		if (!options.level) throw new Error('Ooption LEVEL is required')
-		if (!options.rank) throw new Error('Option RANK is required')
+		if (!options.level) throw new Error('Option LEVEL is required')
 		if (!options.message) options.message = {}
 		if (!options.message.msg) throw new Error('NO_MESSAGE')
 		if (typeof options.message.msg !== 'object') throw new Error('INVALID_MESSAGE')
@@ -21,7 +20,6 @@ module.exports = class levelRank {
 		this.exp = options.exp
 		this.maxexp = options.maxexp
 		this.level = options.level
-		this.rank = options.rank
 		this.text = options.text
         this.member = options.member ?? options.message.msg.member.user
 		this.avatarborder = options.avatarborder
@@ -30,14 +28,8 @@ module.exports = class levelRank {
 		this.barbackground = options.barbackground
 		this.border = options.border
 		this.image = options.background
+		this.blur = options.blur
     }
-	sendReply(content) {
-		return this.message.reply(content)
-	}
-    sendMessage(content) {
-        return this.message.channel.send(content)
-    }
-    
     
     async send() {
         function abbreviateNumber(number) {
@@ -57,11 +49,11 @@ module.exports = class levelRank {
 	const exp = Math.max(0, this.exp)
 	const maxexp = Math.max(this.exp, Math.max(0, this.maxexp))
 	const level = this.level
-	const rank = this.rank
 	const text = this.text ?? '#34eb89'
 	const avatarborder = this.avatarborder ?? '#FF1493'
     const avatarbackground = this.avatarbackground ?? '#FF1493'
 	const bar = this.bar ?? '#FFFFFF'
+	const blur = this.blur ?? '1'
 	const barbackground = this.barbackground ?? '#5f5f6f'
 	const background = this.image ?? '#2f2f3c'
 	const border = this.border ?? '#1f1f2f'
@@ -96,11 +88,11 @@ module.exports = class levelRank {
 
 	ctx.textAlign = 'right'
 
-	ctx.font = '600 30px Uni-Sans-Heavy'
+	ctx.font = '600 30px Arial'
 	ctx.fillText(`${abbreviateNumber(exp)}/${abbreviateNumber(maxexp)}`, 865, 175, 200)
 
-	ctx.font = '500 33px Uni-Sans-Heavy'
-	ctx.fillText(`${rank.length ? `RANK ${rank}    ` : ''}LEVEL ${level}`, 880, 70, 550)
+	ctx.font = '500 33px Arial'
+	ctx.fillText(`LEVEL ${level}`, 880, 70, 550)
 
 	ctx.save()
 
@@ -139,6 +131,8 @@ module.exports = class levelRank {
 	const size = ((exp / maxexp) || 0) * 590
 
 	ctx.beginPath()
+	ctx.shadowBlur = blur
+	ctx.shadowColor = bar
 	ctx.moveTo(270, 195)
 	ctx.arcTo(250, 195, 250, 215, 20)
 	ctx.arcTo(250, 235, 270, 235, 20)
@@ -177,11 +171,11 @@ const name = this.member.username
 const exp = Math.max(0, this.exp)
 const maxexp = Math.max(this.exp, Math.max(0, this.maxexp))
 const level = this.level
-const rank = this.rank
 const text = this.text ?? '#34eb89'
 const avatarborder = this.avatarborder ?? '#FF1493'
 const avatarbackground = this.avatarbackground ?? '#FF1493'
 const bar = this.bar ?? '#FFFFFF'
+const blur = this.blur ?? '1'
 const barbackground = this.barbackground ?? '#5f5f6f'
 const background = this.image ?? '#2f2f3c'
 const border = this.border ?? '#1f1f2f'
@@ -216,11 +210,11 @@ ctx.fillText(name.substr(0, 36), 270, 175, 380)
 
 ctx.textAlign = 'right'
 
-ctx.font = '600 30px Uni-Sans-Heavy'
+ctx.font = '600 30px Arial'
 ctx.fillText(`${abbreviateNumber(exp)}/${abbreviateNumber(maxexp)}`, 865, 175, 200)
 
-ctx.font = '500 33px Uni-Sans-Heavy'
-ctx.fillText(`${rank.length ? `RANK ${rank}    ` : ''}LEVEL ${level}`, 880, 70, 550)
+ctx.font = '500 33px Arial'
+ctx.fillText(`LEVEL ${level}`, 880, 70, 550)
 
 ctx.save()
 
@@ -259,6 +253,8 @@ ctx.fill()
 const size = ((exp / maxexp) || 0) * 590
 
 ctx.beginPath()
+ctx.shadowBlur = blur
+ctx.shadowColor = bar
 ctx.moveTo(270, 195)
 ctx.arcTo(250, 195, 250, 215, 20)
 ctx.arcTo(250, 235, 270, 235, 20)
