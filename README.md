@@ -22,6 +22,8 @@ npm install discord-systems
 
 - [1.0.7](https://github.com/Gotowka/discord-systems/releases/tag/1.0.7), `[Update]` (+1, /0, -1)
 
+- [1.0.8](https://github.com/Gotowka/discord-systems/releases/tag/1.0.8), `[Update]` (+1, /1, -0)
+
 **📁 Required packages**
 
 - [Discord.js](https://www.npmjs.com/package/discord.js) npm install discord.js
@@ -69,6 +71,16 @@ client.on('messageCreate', async (message) => {
                 //tts: '', // BOOLEAN
                 //mention: '', // BOOLEAN, Only for .reply()
             },
+            //embed: {
+            //  title: '', // STRING
+            //  color: '', // HEX
+            //  description: '', // STRING
+            // timestamp: '', // BOOLEAN
+            //  footer: {
+            //    text: '', // STRING
+            //    iconURL: '', // URL
+            //  }
+            //},
 		    //background: '', // https://i.imgur.com/IMGCODE
             //member: message.user, // USER OBJECT
             exp: '', // NUMBER
