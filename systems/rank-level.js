@@ -16,13 +16,13 @@ module.exports = class levelRank {
 		this.message.tts = options.message.tts
 		this.message.msg = options.message.msg
 		this.embed = {}
-		this.embed.title = options.embed.title
-		this.embed.color = options.embed.color
-		this.embed.description = options.embed.description
-		this.embed.timestamp = options.embed.timestamp
+		this.embed.title = options.embed?.title
+		this.embed.color = options.embed?.color
+		this.embed.description = options.embed?.description
+		this.embed.timestamp = options.embed?.timestamp
 		this.embed.footer = {}
-		this.embed.footer.text = options.embed.footer.text
-		this.embed.footer.iconURL = options.embed.footer.iconURL
+		this.embed.footer.text = options.embed?.footer?.text
+		this.embed.footer.iconURL = options.embed?.footer?.iconURL
 		this.photo = options.image ?? 'image'
 		this.exp = options.exp
 		this.maxexp = options.maxexp
@@ -159,10 +159,10 @@ module.exports = class levelRank {
 	if (this.embed.color) embed.setColor(this.embed.color)
 	if (this.embed.description) embed.setDescription(this.embed.description)
 	if (this.embed.timestamp == 'true') embed.setTimestamp()
-	if (this.embed.footer.text) {
+	if (this.embed.footer?.text) {
 		embed.setFooter({
-			text: this.embed.footer.text,
-			iconURL: this.embed.footer.iconURL ?? null
+			text: this.embed.footer?.text,
+			iconURL: this.embed.footer?.iconURL ?? null
 		})
 	}
 	let attachment

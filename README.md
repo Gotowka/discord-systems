@@ -24,6 +24,8 @@ npm install discord-systems
 
 - [1.0.8](https://github.com/Gotowka/discord-systems/releases/tag/1.0.8), `[Update]` (+1, /1, -0)
 
+- [1.0.9](https://github.com/Gotowka/discord-systems/releases/tag/1.0.8), `[Update]` (+4, /1, -0)
+
 **📁 Required packages**
 
 - [Discord.js](https://www.npmjs.com/package/discord.js) npm install discord.js
@@ -48,6 +50,16 @@ client.on('messageCreate', async (message) => {
                 //tts: '', // BOOLEAN
                 //mention: '', // BOOLEAN, Only for .reply()
             },
+            //embed: {
+            //  title: '', // STRING
+            //  color: '', // HEX
+            //  description: '', // STRING
+            //  timestamp: '', // BOOLEAN
+            //  footer: {
+            //    text: '', // STRING
+            //    iconURL: '', // URL
+            //  }
+            //},
             member: message.author,
         })<send/reply>)
     }
@@ -116,6 +128,16 @@ client.on('guildMemberAdd', async (member) => {
         middle: ``, // STRING
         name: ``, // STRING
         bottom: ``, // STRING
+        //embed: {
+        //  title: '', // STRING
+        //  color: '', // HEX
+        //  description: '', // STRING
+        // timestamp: '', // BOOLEAN
+        //  footer: {
+        //   text: '', // STRING
+        //   iconURL: '', // URL
+        //  }
+        //},
         // captcha: true, // BOOLEAN
         // role: '' // ROLE ID, ONLY FOR CAPTCHA = TRUE
         // client: client, // CLIENT OBJECT, REQUIRED FOR CAPTCHA
@@ -136,6 +158,16 @@ client.on('guildMemberRemove', async (member) => {
         middle: ``, // STRING
         name: ``, // STRING
         bottom: ``, // STRING
+        //embed: {
+        //title: '', // STRING
+        //color: '', // HEX
+        //description: '', // STRING
+        //timestamp: '', // BOOLEAN
+        //footer: {
+        //   text: '', // STRING
+        //   iconURL: '', // URL
+        //  }
+        //},
         // text: '', // HEX
         // avatarborder: '', // HEX
         // avatarbg: '', // HEX

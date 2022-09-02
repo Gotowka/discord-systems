@@ -19,6 +19,14 @@ module.exports = class leaveCard {
 	this.avatar = this.member.displayAvatarURL().replace('.webp', '.png')
 	this.middle = options.middle.toUpperCase()
 	this.name = options.name.toUpperCase()
+    this.embed = {}
+    this.embed.title = options.embed?.title
+    this.embed.color = options.embed?.color
+    this.embed.description = options.embed?.description
+    this.embed.timestamp = options.embed?.timestamp
+    this.embed.footer = {}
+    this.embed.footer.text = options.embed?.footer?.text
+    this.embed.footer.iconURL = options.embed?.footer?.iconURL
 	this.text = options.text ?? '#FFFFFF'
 	this.avatarborder = options.avatarborder ?? '#FFFFFF'
 	this.avatarbg = options.avatarbg ?? '#FFFFFF'
@@ -110,9 +118,21 @@ module.exports = class leaveCard {
         ctx.drawImage(avatar, 279, 25, 210, 210)
     
         ctx.stroke()
+        const embed = new Discord.MessageEmbed()
+        if (this.embed.title) embed.setTitle(this.embed.title)
+        if (this.embed.color) embed.setColor(this.embed.color)
+        if (this.embed.description) embed.setDescription(this.embed.description)
+        if (this.embed.timestamp == 'true') embed.setTimestamp()
+        if (this.embed.footer?.text) {
+            embed.setFooter({
+                text: this.embed.footer?.text,
+                iconURL: this.embed.footer?.iconURL ?? null
+            })
+        }
         let attachment
         if (Discord.version.includes('13')) attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), this.member.username + '-leaveCard.png')
         if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: this.member.username + '-leaveCard.png'})
-        this.channel.send({ files: [attachment] })
+        if (this.embed.title) this.channel.send({ embeds: [embed], files: [attachment], tts: this.message.tts })
+        if (!this.embed.title) this.channel.send({ files: [attachment], tts: this.message.tts })
 }
 }
