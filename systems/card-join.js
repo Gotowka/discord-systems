@@ -1,15 +1,6 @@
 const Canvas = require('canvas')
 const Discord = require('discord.js')
-//const defaults = {
-//	text: '#FFFFFF',
-//	avatarborder: '#FFFFFF',
-//	avatarbg: '#FFFFFF',
-//	background: '',
-//	bottom: ''
-//}
 
-//Canvas.registerFont('./font/DynaPuff-VariableFont_wdth,wght.ttf', { family: 'DynaPuff' })
-//Canvas.registerFont('./font/RubikMaze-Regular.ttf', { family: 'Rubik Maze'})
 Canvas.registerFont('./node_modules/discord-systems/font/DynaPuff-VariableFont_wdth,wght.ttf', { family: 'DynaPuff' })
 Canvas.registerFont('./node_modules/discord-systems/font/RubikMaze-Regular.ttf', { family: 'Rubik Maze'})
 let ff
@@ -43,13 +34,6 @@ module.exports = class joinCard {
     cc = this.channel
     }
 
-    sendMessage(content) {
-        return this.channel.send(content)
-    }
-    sendMessage2(content) {
-        return this.memeber.send(content)
-    }
-
     async send() {
         let avatar = this.avatar
         let name = this.name
@@ -59,6 +43,7 @@ module.exports = class joinCard {
         let avatarbg = this.avatarbg
         let background = this.background
         let bottom = this.bottom
+        let data = this.embed
         async function canvas1() {
             avatar = await Canvas.loadImage(avatar)
             const image = await Canvas.loadImage(background)
@@ -133,21 +118,21 @@ module.exports = class joinCard {
         
             ctx.stroke()
             const embed = new Discord.MessageEmbed()
-            if (this.embed.title) embed.setTitle(this.embed.title)
-            if (this.embed.color) embed.setColor(this.embed.color)
-            if (this.embed.description) embed.setDescription(this.embed.description)
-            if (this.embed.timestamp == 'true') embed.setTimestamp()
-            if (this.embed.footer?.text) {
+            if (data.title) embed.setTitle(data.title)
+            if (data.color) embed.setColor(data.color)
+            if (data.description) embed.setDescription(data.description)
+            if (data.timestamp == 'true') embed.setTimestamp()
+            if (data.footer?.text) {
                 embed.setFooter({
-                    text: this.embed.footer?.text,
-                    iconURL: this.embed.footer?.iconURL ?? null
+                    text: data.footer.text,
+                    iconURL: data.footer?.iconURL ?? null
                 })
             }
             let attachment
             if (Discord.version.includes('13')) attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), ff.username + '-joinCard.png')
             if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: ff.username + '-joinCard.png'})
-            if (this.embed.title) cc.send({ embeds: [embed], files: [attachment], tts: this.message.tts })
-            if (!this.embed.title) cc.send({ files: [attachment], tts: this.message.tts })
+            if (data.title) cc.send({ embeds: [embed], files: [attachment] })
+            if (!data.title) cc.send({ files: [attachment] })
         }
         if (!this.language) this.language = 'eng'
         if (this.language === 'eng') {

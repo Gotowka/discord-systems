@@ -24,7 +24,9 @@ npm install discord-systems
 
 - [1.0.8](https://github.com/Gotowka/discord-systems/releases/tag/1.0.8), `[Update]` (+1, /1, -0)
 
-- [1.0.9](https://github.com/Gotowka/discord-systems/releases/tag/1.0.8), `[Update]` (+4, /1, -0)
+- [1.0.9](https://github.com/Gotowka/discord-systems/releases/tag/1.0.9), `[Update]` (+4, /1, -0)
+
+- [1.1.1](https://github.com/Gotowka/discord-systems/releases/tag/1.1.1), `[Fixes]` (+0, /2, -0)
 
 **📁 Required packages**
 
