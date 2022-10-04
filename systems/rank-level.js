@@ -168,11 +168,8 @@ module.exports = class levelRank {
 	let attachment
 	if (Discord.version.includes('13')) attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), this.member.username + '-levelRank.png')
 	if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: this.member.username + '-levelRank.png'})
-	if (this.photo == 'thumbnail') {
-		embed.setThumbnail(`attachment://${this.member.username}-levelRank.png`)
-	} else {
-		embed.setImage(`attachment://${this.member.username}-levelRank.png`)
-	}
+	if (this.photo == 'thumbnail') embed.setThumbnail(`attachment://${this.member.username}-levelRank.png`)
+	if (this.photo == 'image') embed.setImage(`attachment://${this.member.username}-levelRank.png`)
 	if (this.embed.title) this.message.msg.channel.send({ embeds: [embed], files: [attachment], tts: this.message.tts })
 	if (!this.embed.title) this.message.msg.channel.send({ files: [attachment], tts: this.message.tts })
 }
@@ -307,11 +304,8 @@ if (this.embed.footer.text) {
 let attachment
 if (Discord.version.includes('13')) attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), this.member.username + '-levelRank.png')
 if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: this.member.username + '-levelRank.png'})
-if (this.photo == 'thumbnail') {
-	embed.setThumbnail(`attachment://${this.member.username}-levelRank.png`)
-} else {
-	embed.setImage(`attachment://${this.member.username}-levelRank.png`)
-}
+if (this.photo == 'thumbnail') embed.setThumbnail(`attachment://${this.member.username}-levelRank.png`)
+if (this.photo == 'image') embed.setImage(`attachment://${this.member.username}-levelRank.png`)
 if (this.embed.title) this.message.msg.reply({ embeds: [embed], files: [attachment], allowedMentions: { repliedUser: this.message.mention }, tts: this.message.tts })
 if (!this.embed.title) this.message.msg.reply({ files: [attachment], allowedMentions: { repliedUser: this.message.mention }, tts: this.message.tts })
 }
