@@ -11,9 +11,6 @@ module.exports = class Tvpis {
         this.message = options.message
         this.text = options.text
     }
-    sendMessage(content) {
-        return this.message.msg.channel.send(content)
-    }
     async send() {
         let tekst = this.text
         const style = this.style || '1'

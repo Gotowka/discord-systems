@@ -6,4 +6,5 @@ module.exports.Triggered = require('./systems/triggered.js')
 module.exports.Suggest = require('./systems/suggests')
 module.exports.SuggestsYes = require('./systems/suggests-yes')
 module.exports.SuggestsNo = require('./systems/suggests-no')
-module.exports.Version = '1.1.1'
+module.exports.Lyrics = require('./systems/lyrics')
+module.exports.Version = '1.1.2'
