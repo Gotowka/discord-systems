@@ -6,7 +6,7 @@ npm install discord-systems
 
 # 💡 Versions
 
-- [1.0.0](https://www.npmjs.com/package/discord-systems/v/1.0.0), Discord.js: 13.0.1-14.2.0 and Canvas: ^2.9.3
+- [1.0.0](https://www.npmjs.com/package/discord-systems/v/1.0.0), Discord.js: 13.0.1-14.7.1 and Canvas: ^2.9.3
 
 - [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), `[Fixes]`
 
@@ -29,6 +29,8 @@ npm install discord-systems
 - [1.1.1](https://github.com/Gotowka/discord-systems/releases/tag/1.1.1), `[Fixes]` (+0, /2, -0)
 
 - [1.1.2](https://github.com/Gotowka/discord-systems/releases/tag/1.1.2), `[Update]` (+2, /1, -0)
+
+- [1.1.3](https://github.com/Gotowka/discord-systems/releases/tag/1.1.3), `[Update]` (+1, /0, -0)
 
 **📁 Required packages**
 
@@ -111,6 +113,10 @@ client.on('messageCreate', async (message) => {
 	    }).<send/reply>()
     }
 
+        if (message.content == 'level2') {
+        new levelRank2(OPTIONS-LEVELRANK1 And option rank:).<send/reply>()
+    }
+
     if (message.content.includes('!lyrics')) {
         const music = await Lyrics.search(message.content.split('!lyrics')[1])
         message.reply({ content: music.lyrics })
@@ -125,6 +131,7 @@ client.on('messageCreate', async (message) => {
       client: client // CLIENT OBJECT
     }).start()
     }
+}
 })
 
 client.on('guildMemberAdd', async (member) => {
