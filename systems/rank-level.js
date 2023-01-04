@@ -4,9 +4,9 @@ const SI_SYMBOL = ["", "k", "M", "B", "T", "P", "E"]
 
 module.exports = class levelRank {
     constructor(options = {}) {
-		if (!options.exp) throw new Error('Option EXP is required!')
-		if (!options.maxexp) throw new Error('Option MAXEXP is required!')
-		if (!options.level) throw new Error('Option LEVEL is required')
+		if (!String(options.exp)) throw new Error('Option EXP is required!')
+		if (!String(options.maxexp)) throw new Error('Option MAXEXP is required!')
+		if (!String(options.level)) throw new Error('Option LEVEL is required')
 		if (!options.message) options.message = {}
 		if (!options.message.msg) throw new Error('NO_MESSAGE')
 		if (typeof options.message.msg !== 'object') throw new Error('INVALID_MESSAGE')
@@ -165,13 +165,11 @@ module.exports = class levelRank {
 			iconURL: this.embed.footer?.iconURL ?? null
 		})
 	}
-	let attachment
-	if (Discord.version.includes('13')) attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), this.member.username + '-levelRank.png')
-	if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: this.member.username + '-levelRank.png'})
+	let attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), this.member.username + '-levelRank.png')
 	if (this.photo == 'thumbnail') embed.setThumbnail(`attachment://${this.member.username}-levelRank.png`)
 	if (this.photo == 'image') embed.setImage(`attachment://${this.member.username}-levelRank.png`)
 	if (this.embed.title) this.message.msg.channel.send({ embeds: [embed], files: [attachment], tts: this.message.tts })
-	if (!this.embed.title) this.message.msg.channel.send({ files: [attachment], tts: this.message.tts })
+	else this.message.msg.channel.send({ files: [attachment], tts: this.message.tts })
 }
 
 async reply() {
@@ -301,12 +299,10 @@ if (this.embed.footer.text) {
 		iconURL: this.embed.footer.iconURL ?? null
 	})
 }
-let attachment
-if (Discord.version.includes('13')) attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), this.member.username + '-levelRank.png')
-if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: this.member.username + '-levelRank.png'})
+let attachment = new Discord.MessageAttachment(canvas.toBuffer('image/png'), this.member.username + '-levelRank.png')
 if (this.photo == 'thumbnail') embed.setThumbnail(`attachment://${this.member.username}-levelRank.png`)
 if (this.photo == 'image') embed.setImage(`attachment://${this.member.username}-levelRank.png`)
 if (this.embed.title) this.message.msg.reply({ embeds: [embed], files: [attachment], allowedMentions: { repliedUser: this.message.mention }, tts: this.message.tts })
-if (!this.embed.title) this.message.msg.reply({ files: [attachment], allowedMentions: { repliedUser: this.message.mention }, tts: this.message.tts })
+else this.message.msg.reply({ files: [attachment], allowedMentions: { repliedUser: this.message.mention }, tts: this.message.tts })
 }
 }
