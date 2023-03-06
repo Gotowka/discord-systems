@@ -32,7 +32,9 @@ npm install discord-systems
 
 - [1.1.3](https://github.com/Gotowka/discord-systems/releases/tag/1.1.3), `[Update]` (+1, /0, -0)
 
-- [1.1.4](https://github.com/Gotowka/discord-systems/releases/tag/1.1.3), `[Update]` (+0, /3, -0)
+- [1.1.4](https://github.com/Gotowka/discord-systems/releases/tag/1.1.4), `[Update]` (+0, /3, -0)
+
+- [1.1.5](https://github.com/Gotowka/discord-systems/releases/tag/1.1.5), `[Update]` (+1, /0, -1)
 
 **📁 Required packages**
 
@@ -49,7 +51,7 @@ npm install discord-systems
 
 ```js
 client.on('messageCreate', async (message) => {
-    const { levelRank, Tvpis, Triggered, Suggest, Lyrics, levelRankTwo } = require('discord-systems')
+    const { levelRank, Tvpis, Triggered, Suggest, Lyrics } = require('discord-systems')
 
     if (message.content == 'triggered') {
         new Triggered({
@@ -113,10 +115,6 @@ client.on('messageCreate', async (message) => {
             //border: '', // HEX
             //blur: '', // NUMBER
 	    }).<send/reply>()
-    }
-
-        if (message.content == 'level2') {
-        new levelRankTwo(OPTIONS-LEVELRANK1 And option rank:).<send/reply>()
     }
 
     if (message.content.includes('!lyrics')) {

@@ -25,6 +25,7 @@ module.exports = class levelRank {
 		this.embed.footer.iconURL = options.embed?.footer?.iconURL
 		this.photo = options.image ?? 'image'
 		this.exp = options.exp
+		this.rank = options.rank
 		this.maxexp = options.maxexp
 		this.level = options.level
 		this.text = options.text
@@ -56,6 +57,7 @@ module.exports = class levelRank {
 	const exp = Math.max(0, this.exp)
 	const maxexp = Math.max(this.exp, Math.max(0, this.maxexp))
 	const level = this.level
+	const rank = this.rank
 	const text = this.text ?? '#34eb89'
 	const avatarborder = this.avatarborder ?? '#FF1493'
     const avatarbackground = this.avatarbackground ?? '#FF1493'
@@ -99,7 +101,8 @@ module.exports = class levelRank {
 	ctx.fillText(`${abbreviateNumber(exp)}/${abbreviateNumber(maxexp)}`, 865, 175, 200)
 
 	ctx.font = '500 33px Arial'
-	ctx.fillText(`LEVEL ${level}`, 880, 70, 550)
+	if (rank) ctx.fillText(`  #${rank}    LEVEL ${level}`, 880, 70, 550)
+	else ctx.fillText(`LEVEL ${level}`, 880, 70, 550)
 
 	ctx.save()
 
@@ -190,6 +193,7 @@ const name = this.member.username
 const exp = Math.max(0, this.exp)
 const maxexp = Math.max(this.exp, Math.max(0, this.maxexp))
 const level = this.level
+const rank = this.rank
 const text = this.text ?? '#34eb89'
 const avatarborder = this.avatarborder ?? '#FF1493'
 const avatarbackground = this.avatarbackground ?? '#FF1493'
@@ -233,7 +237,8 @@ ctx.font = '600 30px Arial'
 ctx.fillText(`${abbreviateNumber(exp)}/${abbreviateNumber(maxexp)}`, 865, 175, 200)
 
 ctx.font = '500 33px Arial'
-ctx.fillText(`LEVEL ${level}`, 880, 70, 550)
+if (rank) ctx.fillText(`  #${rank}    LEVEL ${level}`, 880, 70, 550)
+else ctx.fillText(`LEVEL ${level}`, 880, 70, 550)
 
 ctx.save()
 
