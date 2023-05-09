@@ -6,7 +6,7 @@ npm install discord-systems
 
 # 💡 Module
 
-- 1.1.6 [ https://github.com/Gotowka/discord-systems/releases/tag/1.1.6 ]
+- 1.1.5 [ https://github.com/Gotowka/discord-systems/releases/tag/1.1.5 ]
 
 **📁 Required packages**
 
