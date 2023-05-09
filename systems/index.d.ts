@@ -8,7 +8,7 @@
      * Search the music
      * @param music - The song title
     */
-   search(music: string | null): this;
+   search(music: string): this;
 }
 
 /**
@@ -38,7 +38,7 @@ declare class joinCard {
     send(): this;
 }
 /**
- * Create the joinCard
+ * Create the leaveCard
  */
  declare class leaveCard {
     readonly data: leaveCard
@@ -63,7 +63,7 @@ declare class joinCard {
     start(): this;
 }
 /**
- * Create the Suggests reject systems
+ * Create the Suggests no systems
  */
 declare class SuggestsNo {
     readonly data: SuggestsNo
@@ -71,7 +71,7 @@ declare class SuggestsNo {
     start(): this;  
 }
 /**
- * Create the Suggests reject systems
+ * Create the Suggests yes systems
  */
  declare class SuggestsYes {
     readonly data: SuggestsYes

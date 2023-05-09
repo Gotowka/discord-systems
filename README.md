@@ -4,47 +4,21 @@
 npm install discord-systems
 ```
 
-# 💡 Versions
+# 💡 Module
 
-- [1.0.0](https://www.npmjs.com/package/discord-systems/v/1.0.0), Discord.js: 13.0.1-14.7.1 and Canvas: ^2.9.3
-
-- [1.0.1](https://www.npmjs.com/package/discord-systems/v/1.0.1), `[Fixes]`
-
-- [1.0.2](https://github.com/Gotowka/discord-systems/releases/tag/1.0.2), `[Update]` (+2, /1, -0)
-
-- [1.0.3](https://github.com/Gotowka/discord-systems/releases/tag/1.0.3), `[Fixes]`  (+0, /1, -0)
-
-- [1.0.4](https://github.com/Gotowka/discord-systems/releases/tag/1.0.4), `[Update]` (+8, /0, -0)
-
-- [1.0.5](https://github.com/Gotowka/discord-systems/releases/tag/1.0.5), `[Beta]` (+3, /0, -0)
-
-- [1.0.6](https://github.com/Gotowka/discord-systems/releases/tag/1.0.6), `[Update]` (+0, /2, -0)
-
-- [1.0.7](https://github.com/Gotowka/discord-systems/releases/tag/1.0.7), `[Update]` (+1, /0, -1)
-
-- [1.0.8](https://github.com/Gotowka/discord-systems/releases/tag/1.0.8), `[Update]` (+1, /1, -0)
-
-- [1.0.9](https://github.com/Gotowka/discord-systems/releases/tag/1.0.9), `[Update]` (+4, /1, -0)
-
-- [1.1.1](https://github.com/Gotowka/discord-systems/releases/tag/1.1.1), `[Fixes]` (+0, /2, -0)
-
-- [1.1.2](https://github.com/Gotowka/discord-systems/releases/tag/1.1.2), `[Update]` (+2, /1, -0)
-
-- [1.1.3](https://github.com/Gotowka/discord-systems/releases/tag/1.1.3), `[Update]` (+1, /0, -0)
-
-- [1.1.4](https://github.com/Gotowka/discord-systems/releases/tag/1.1.4), `[Update]` (+0, /3, -0)
-
-- [1.1.5](https://github.com/Gotowka/discord-systems/releases/tag/1.1.5), `[Update]` (+1, /0, -1)
+- 1.1.6 [ https://github.com/Gotowka/discord-systems/releases/tag/1.1.6 ]
 
 **📁 Required packages**
 
-- [Discord.js](https://www.npmjs.com/package/discord.js) npm install discord.js
+- [Discord.js](https://www.npmjs.com/package/discord.js) npm install discord.js [^13.0.1]
 
-- [Canvas](https://www.npmjs.com/package/canvas) npm install canvas
+- [Canvas](https://www.npmjs.com/package/canvas) npm install canvas [^2.9.3]
+
+- [Fs-extra](https://www.npmjs.com/package/fs-extra) npm install fs-extra  [^10.0.0]
 
 # 🧷 Links
 
-- [Discord Support](https://discord.gg/ae8hgMDxDc)
+- [Discord Support](https://discord.gg/apUVFy7SUh)
 - [Github](https://github.com/Gotowka/discord-systems)
 
 # ❓ Example Usage

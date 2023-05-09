@@ -39,6 +39,6 @@ module.exports = class SuggestsYes {
             .setStyle('DANGER')
             .setEmoji('❌')
         )
-        msg.edit({ components: [buttons] })
+        await msg.edit({ components: [buttons] })
     }
 }

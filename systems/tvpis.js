@@ -10,7 +10,9 @@ module.exports = class Tvpis {
 		if (typeof options.message.msg !== 'object') throw new Error('INVALID_MESSAGE')
         this.message = options.message
         this.text = options.text
+        this.style = options.style
     }
+
     async send() {
         let tekst = this.text
         const style = this.style || '1'
@@ -41,6 +43,7 @@ module.exports = class Tvpis {
         if (Discord.version.includes('14')) attachment = new Discord.AttachmentBuilder(canvas.toBuffer('image/png'), { name: 'tvpis.png'})
         this.message.msg.channel.send({ files: [attachment], tts: this.message.tts })
     }
+    
     async reply() {
         let tekst = this.text
         const style = this.style || '1'

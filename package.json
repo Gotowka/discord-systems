@@ -1,6 +1,6 @@
 {
   "name": "discord-systems",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "discord-systems",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Gotowka/discord-systems#readme",
   "dependencies": {
     "discord.js": "^13.1.0",
-    "canvas": "^2.9.3"
+    "canvas": "^2.9.3",
+    "fs-extra": "^11.1.1"
   }
 }
